@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://fccuser:JQlQFdGgsQWx2R0S@cluster0.wugly1v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect(process.env.MONGO_DB);
 
 const issueSchema = new mongoose.Schema({
   issue_title: { type: String, required: true },
